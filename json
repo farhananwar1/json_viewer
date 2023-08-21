@@ -1,0 +1,141 @@
+{
+    "CollectionName": "SupportBugs",
+    "SubcollectionOf": null,
+    "Path": "/SupportBugs",
+    "DocumentId": "RandomId",
+    "Document": {
+      "userDescription": {
+        "dataType": "object",
+        "description": "",
+        "map": {
+          "summary": {
+            "dataType": "string",
+            "example": "",
+            "validation": "",
+            "description": "One liner summary?"
+          },
+          "howIsItUseful": {
+            "dataType": "string",
+            "example": "",
+            "validation": "",
+            "description": "How is it useful?"
+          }
+        }
+      },
+      "systemLogs": {
+        "dataType": "object",
+        "map": {
+          "phoneMake": {
+            "dataType": "string|null",
+            "example": "Samsung|Apple",
+            "description": "dffgdbdfdfd"
+          },
+          "phoneModel": {
+            "dataType": "string|null",
+            "example": "iPhone X",
+            "description": "Model of mobile phone"
+          },
+          "phoneOS": {
+            "dataType": "string|null",
+            "example": "iOS 15.1 | Android 10.2",
+            "description": "OS"
+          },
+          "appBuild": {
+            "dataType": "string|null",
+            "example": "",
+            "description": "App build version"
+          },
+          "locationPermissionGranted": {
+            "dataType":
+                "enum(granted|denied|restricted|limited|permanentlyDenied)",
+            "example": "granted",
+            "description": "The location permission status"
+          },
+          "picturePermissionGranted": {
+            "dataType":
+                "enum(granted|denied|restricted|limited|permanentlyDenied)",
+            "example": "granted",
+            "description": "The picture permission status"
+          },
+          "bluetoothPermissionGranted": {
+            "dataType":
+                "enum(granted|denied|restricted|limited|permanentlyDenied)",
+            "example": "granted",
+            "description": "The bluetooth permission status"
+          },
+          "accessContactsPermissionGranted": {
+            "dataType":
+                "enum(granted|denied|restricted|limited|permanentlyDenied)",
+            "example": "granted",
+            "description": "The contacts permission status"
+          },
+          "ahaId": {
+            "dataType": "string|null",
+            "example": "",
+            "description": "Corresponding idea id in Aha."
+          },
+          "ahaStatus": {
+            "dataType": "string|null",
+            "example": "",
+            "description": "Status in Aha,"
+          },
+          "ahaLastSync": {
+            "dataType": "timestamp|null",
+            "example": "",
+            "description": "When did the last sync happen?"
+          }
+        }
+      },
+      "screenshots": {
+        "dataType": "array",
+        "element": {
+          "dataType": "string",
+          "example": "/234324sf234werewrxd3.png",
+          "validation": "Should be an address to an image in storage.",
+          "description": ""
+        }
+      },
+      "documentInfo": {
+        "type": "object",
+        "map": {
+          "deletedBy": {
+            "type": "reference|null",
+            "referenceCollection": "~Users",
+            "example": "/Users/sxvv23rvvfef24r2vfcv"
+          },
+          "deletedOn": {
+            "type": "timestamp|null",
+            "example": "2023-01-23 18:00:00"
+          },
+          "createdBy": {
+            "type": "reference|null",
+            "referenceCollection": "~Users",
+            "example": "/Users/sxvv23rvvfef24r2vfcv"
+          },
+          "createdOn": {
+            "type": "timestamp|null",
+            "example": "2023-01-23 18:00:00"
+          },
+          "archivedBy": {
+            "type": "reference|null",
+            "referenceCollection": "~Users",
+            "example": "/Users/sxvv23rvvfef24r2vfcv"
+          },
+          "archivedOn": {
+            "type": "timestamp|null",
+            "example": "2023-01-23 18:00:00"
+          },
+          "modifiedBy": {
+            "type": "reference|null",
+            "referenceCollection": "~Users",
+            "example": "/Users/sxvv23rvvfef24r2vfcv"
+          },
+          "modifiedOn": {
+            "type": "timestamp|null",
+            "example": "2023-01-23 18:00:00"
+          }
+        }
+      }
+    },
+    "Subcollections": []
+  }
