@@ -1,0 +1,469 @@
+{
+    "CollectionName": "Users",
+    "SubcollectionOf": null,
+    "Path": "/Users",
+    "DocumentId": "GoogleAuthId",
+    "Document": {
+      "username": {
+        "dataType": "string",
+        "example": "sohail10",
+        "validation":
+            "Should must be unique, not contain special chars and atleast contain 3 chars. Need consideration of max limit.",
+        "description": "Supposed to be set by backend only."
+      },
+      "marketingGroups": {
+        "dataType": "array",
+        "element": {
+          "dataType": "reference",
+          "referenceCollection": "~MarketingGroups",
+          "example": "/MarketingGroups/sxvv23rvvfef24r2vfcv"
+        }
+      },
+      "relatedAccounts": {
+        "dataType": "array",
+        "element": {
+          "dataType": "object",
+          "map": {
+            "name": {
+              "dataType": "string",
+              "example": "Airport Montreal",
+              "validation": ""
+            },
+            "id": {
+              "dataType": "reference",
+              "referenceCollection": "~Accounts",
+              "example": "/Accounts/sxvv23rvvfef24r2vfcv"
+            }
+          }
+        }
+      },
+      "customAuthRoles": {
+        "dataType": "array",
+        "element": {
+          "dataType": "string",
+          "item": {
+            "dataType": "string",
+            "example": "electedOfficial",
+            "validation": ""
+          }
+        }
+      },
+      "electedOfficialId": {
+        "dataType": "reference|null",
+        "referenceCollection": "~ElectedOfficals",
+        "example": "/ElectedOfficals/sxvv23rvvfef24r2vfcv",
+        "validation":
+            "Should only exist if user is an active elected official.",
+        "description": ""
+      },
+      "electoralCandidateId": {
+        "version": 0,
+        "dataType": "null",
+        "referenceCollection": "",
+        "example": "",
+        "description": "Will add more detail soon."
+      },
+      "hsId": {
+        "dataType": "string|null",
+        "example": "1232441",
+        "validation": "The id of the user in hubspot",
+        "description": ""
+      },
+      "myGovernments": {
+        "dataType": "object",
+        "map": {
+          "country": {
+            "dataType": "object",
+            "map": {
+              "id": {
+                "dataType": "reference|null",
+                "referenceCollection": "~Governments",
+                "example": "/Governments/sxvv23rvvfef24r2vfcv"
+              },
+              "username": {
+                "dataType": "string|null",
+                "example": "",
+                "validation": "",
+                "description": ""
+              },
+              "displayName": {
+                "dataType": "object|null",
+                "map": {
+                  "fr": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  },
+                  "en": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  }
+                }
+              }
+            }
+          },
+          "stateProvince": {
+            "dataType": "object",
+            "map": {
+              "id": {
+                "dataType": "reference|null",
+                "referenceCollection": "~Governments",
+                "example": "/Governments/sxvv23rvvfef24r2vfcv"
+              },
+              "username": {
+                "dataType": "string|null",
+                "example": "",
+                "validation": "",
+                "description": ""
+              },
+              "displayName": {
+                "dataType": "object|null",
+                "map": {
+                  "fr": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  },
+                  "en": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  }
+                }
+              }
+            }
+          },
+          "city": {
+            "dataType": "object",
+            "map": {
+              "id": {
+                "dataType": "reference|null",
+                "referenceCollection": "~Governments",
+                "example": "/Governments/sxvv23rvvfef24r2vfcv"
+              },
+              "username": {
+                "dataType": "string|null",
+                "example": "",
+                "validation": "",
+                "description": ""
+              },
+              "displayName": {
+                "dataType": "object|null",
+                "map": {
+                  "fr": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  },
+                  "en": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "myElectoralDistricts": {
+        "dataType": "object",
+        "map": {
+          "country": {
+            "dataType": "object",
+            "map": {
+              "id": {
+                "dataType": "reference|null",
+                "referenceCollection": "~ElectoralDistricts",
+                "example": "/ElectoralDistricts/sxvv23rvvfef24r2vfcv"
+              },
+              "username": {
+                "dataType": "string|null",
+                "example": "",
+                "validation": "",
+                "description": ""
+              },
+              "displayName": {
+                "dataType": "object|null",
+                "map": {
+                  "fr": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  },
+                  "en": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  }
+                }
+              }
+            }
+          },
+          "stateProvince": {
+            "dataType": "object",
+            "map": {
+              "id": {
+                "dataType": "reference|null",
+                "referenceCollection": "~ElectoralDistricts",
+                "example": "/ElectoralDistricts/sxvv23rvvfef24r2vfcv"
+              },
+              "username": {
+                "dataType": "string|null",
+                "example": "",
+                "validation": "",
+                "description": ""
+              },
+              "displayName": {
+                "dataType": "object|null",
+                "map": {
+                  "fr": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  },
+                  "en": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  }
+                }
+              }
+            }
+          },
+          "city": {
+            "dataType": "object",
+            "map": {
+              "id": {
+                "dataType": "reference|null",
+                "referenceCollection": "~ElectoralDistricts",
+                "example": "/ElectoralDistricts/sxvv23rvvfef24r2vfcv"
+              },
+              "username": {
+                "dataType": "string|null",
+                "example": "",
+                "validation": "",
+                "description": ""
+              },
+              "displayName": {
+                "dataType": "object|null",
+                "map": {
+                  "fr": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  },
+                  "en": {
+                    "dataType": "string|null",
+                    "example": "",
+                    "validation": "",
+                    "description": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "socials": {
+        "dataType": "object",
+        "map": {
+          "facebook": {
+            "dataType": "string|null",
+            "example": "",
+            "validation": ""
+          },
+          "instagram": {
+            "dataType": "string|null",
+            "example": "",
+            "validation": ""
+          },
+          "linkedin": {
+            "dataType": "string|null",
+            "example": "",
+            "validation": ""
+          },
+          "snapchat": {
+            "dataType": "string|null",
+            "example": "",
+            "validation": ""
+          },
+          "twitter": {
+            "dataType": "string|null",
+            "example": "",
+            "validation": ""
+          },
+          "tiktok": {"dataType": "string|null", "example": "", "validation": ""}
+        }
+      },
+      "userMadePublicInfo": {
+        "dataType": "object",
+        "map": {
+          "firstName": {
+            "dataType": "string|null",
+            "example": "Sohail",
+            "validation": ""
+          },
+          "lastName": {
+            "dataType": "string|null",
+            "example": "Rauf",
+            "validation": ""
+          },
+          "phoneNumbers": {
+            "dataType": "array",
+            "element": {
+              "dataType": "object",
+              "map": {
+                "number": {"dataType": "string", "example": ""},
+                "extension": {"dataType": "string|null", "example": ""},
+                "type": {"dataType": "enum(personal|office)", "example": ""},
+                "isValidated": {"dataType": "boolean", "example": ""},
+                "isPrimary": {"dataType": "boolean", "example": ""}
+              }
+            }
+          },
+          "emails": {
+            "dataType": "array",
+            "element": {
+              "dataType": "object",
+              "map": {
+                "email": {
+                  "dataType": "string",
+                  "example": "",
+                  "validation": "Must be a valid email address."
+                },
+                "type": {"dataType": "enum(personal|office)", "example": ""},
+                "isValidated": {"dataType": "boolean", "example": ""},
+                "isPrimary": {"dataType": "boolean", "example": ""}
+              }
+            }
+          },
+          "gender": {
+            "dataType": "enum(male|female|other)|null",
+            "example": "male",
+            "validation": ""
+          },
+          "streetAddressCordinates": {
+            "dataType": "geopoint|null",
+            "example": "[125.6, 10.1]",
+            "validation": "Should be a valid geopoint."
+          },
+          "addressText": {
+            "dataType": "string|null",
+            "example":
+                "Street abulasphani, Gulshan-e-Iqbal, Karachi, Sindh, Pakistan",
+            "validation": ""
+          },
+          "bio": {
+            "dataType": "string|null",
+            "example": "",
+            "validation": "",
+            "description": ""
+          }
+        }
+      },
+      "analytics": {
+        "dataType": "object",
+        "map": {
+          "following": {
+            "dataType": "integer",
+            "example": "215",
+            "validation":
+                "Should not be a negative number. Default should be 0."
+          },
+          "followers": {
+            "dataType": "integer",
+            "example": "515",
+            "validation":
+                "Should not be a negative number. Default should be 0."
+          },
+          "requests": {
+            "dataType": "integer",
+            "example": "515",
+            "validation":
+                "Should not be a negative number. Default should be 0."
+          },
+          "suggestions": {
+            "dataType": "integer",
+            "example": "515",
+            "validation":
+                "Should not be a negative number. Default should be 0."
+          },
+          "appreciations": {
+            "dataType": "integer",
+            "example": "515",
+            "validation":
+                "Should not be a negative number. Default should be 0."
+          },
+          "questions": {
+            "dataType": "integer",
+            "example": "515",
+            "validation":
+                "Should not be a negative number. Default should be 0."
+          },
+          "unreadMessagesCount": {
+            "dataType": "integer",
+            "example": "515",
+            "validation":
+                "Should not be a negative number. Default should be 0."
+          }
+        }
+      },
+      "isFlagged": {"dataType": "boolean", "description": "Default to false"},
+      "shareableLink": {"dataType": "String", "description": "Set by backend"},
+      "documentInfo": {
+        "dataType": "object",
+        "map": {
+          "deletedBy": {
+            "dataType": "reference|null",
+            "referenceCollection": "~Users",
+            "example": "/Users/sxvv23rvvfef24r2vfcv"
+          },
+          "deletedOn": {
+            "dataType": "timestamp|null",
+            "example": "2023-01-23 18:00:00"
+          },
+          "createdBy": {
+            "dataType": "reference|null",
+            "referenceCollection": "~Users",
+            "example": "/Users/sxvv23rvvfef24r2vfcv"
+          },
+          "createdOn": {
+            "dataType": "timestamp|null",
+            "example": "2023-01-23 18:00:00"
+          },
+          "archivedBy": {
+            "dataType": "reference|null",
+            "referenceCollection": "~Users",
+            "example": "/Users/sxvv23rvvfef24r2vfcv"
+          },
+          "archivedOn": {
+            "dataType": "timestamp|null",
+            "example": "2023-01-23 18:00:00"
+          },
+          "modifiedBy": {
+            "dataType": "reference|null",
+            "referenceCollection": "~Users",
+            "example": "/Users/sxvv23rvvfef24r2vfcv"
+          },
+          "modifiedOn": {
+            "dataType": "timestamp|null",
+            "example": "2023-01-23 18:00:00"
+          }
+        }
+      }
+    },
+    "Subcollections": ["Addresses"]
+  };
